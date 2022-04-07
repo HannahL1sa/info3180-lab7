@@ -9,6 +9,7 @@ from app import app
 from flask import render_template, request, jsonify, send_file
 from werkzeug.utils import secure_filename
 from app.forms import UploadForm
+from flask_wtf.csrf import generate_csrf
 import os
 
 
@@ -37,6 +38,13 @@ def upload():
         else:
             errors = form_errors(form)
             return jsonify(errors=errors)
+            
+
+@app.route('/api/csrf-token', methods=['GET'])
+def get_csrf():
+ return jsonify({'csrf_token': generate_csrf()})
+
+
 ###
 # The functions below should be applicable to all Flask apps.
 ###
