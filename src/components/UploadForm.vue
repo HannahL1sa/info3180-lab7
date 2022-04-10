@@ -1,9 +1,9 @@
 <template>
     <form @submit.prevent="uploadPhoto" id="uploadForm" method="POST" enctype="multipart/form-data">
-        <label for="description">Description</label><br>
+        <label>Description</label><br>
         <textarea name="description"></textarea><br>
 
-        <label for="photo">Photo Upload</label><br>
+        <label>Photo Upload</label><br>
         <input type="file" name="photo"><br><br>
 
         <button type="submit" name="submit" class="form-btn">Submit</button>
